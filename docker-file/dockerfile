@@ -1,6 +1,6 @@
 FROM registry.suse.com/bci/bci-base:15.4
 RUN zypper ref && \
-        zypper -n in libtirpc
+        zypper patch
 RUN zypper -n in python3 && \
         echo "Hello Green World!" > index.html
 ENTRYPOINT ["/usr/bin/python3", "-m", "http.server"]
